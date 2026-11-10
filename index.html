@@ -10,7 +10,7 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         :root{--pri:#00f0ff;--sec:#ff00ff;--dark:#0a0a12;--card:rgba(255,255,255,0.05);--glass:rgba(255,255,255,0.1);--glass-border:rgba(255,255,255,0.2);--text:#fff;--muted:rgba(255,255,255,0.7);--blur:blur(20px)}
-        html{scroll-behavior:smooth}
+        html{scroll-behavior:smooth;overflow-x:hidden}
         body{font-family:'Orbitron',sans-serif;background:linear-gradient(135deg,#0a0a1a 0%,#1a0a2e 50%,#0a1a2e 100%);color:var(--text);overflow-x:hidden;min-height:100vh}
         body::before{content:'';position:fixed;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 20% 80%,rgba(0,240,255,0.15) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(255,0,255,0.15) 0%,transparent 50%),radial-gradient(circle at 40% 40%,rgba(120,0,255,0.1) 0%,transparent 40%);z-index:-1;animation:bgMove 20s ease-in-out infinite}
         @keyframes bgMove{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,-20px)}}
@@ -219,7 +219,11 @@
         body.pink .bot-input input:focus{box-shadow:0 0 15px rgba(255,105,180,0.3)}
         .bot-input button{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--pri),var(--sec));border:none;cursor:pointer;font-size:1rem;box-shadow:0 4px 15px rgba(0,240,255,0.4)}
         body.pink .bot-input button{box-shadow:0 4px 15px rgba(255,105,180,0.4)}
-        @media(max-width:768px){.nav-links{display:none}.hero-text h1{font-size:1.8rem}.card{width:250px;height:340px}.timeline::before{left:15px}.tl-item{padding-left:40px!important;padding-right:0!important;justify-content:flex-start!important}.tl-item::after{left:15px}.toggle{width:150px;height:38px;top:75px;right:10px}.toggle-text{font-size:0.7rem;padding:0 10px}.available-badge{display:none}}
+        @media(max-width:768px){.sec-title h2{font-size:1.15rem;padding:0.5rem 1rem;max-width:calc(100vw - 32px)}.proj-group{padding:0 1rem}.nav-links{display:none}.hero-text h1{font-size:1.8rem}.card{width:250px;height:340px}.timeline::before{left:15px}.tl-item{padding-left:40px!important;padding-right:0!important;justify-content:flex-start!important}.tl-item::after{left:15px}.toggle{width:150px;height:38px;top:75px;right:10px}.toggle-text{font-size:0.7rem;padding:0 10px}.available-badge{display:none}}
+        .proj-note{text-align:center;color:var(--muted);max-width:760px;margin:-1.5rem auto 2rem;font-size:0.85rem;line-height:1.6}
+        .proj-group{max-width:1000px;margin:2rem auto 1rem;font-size:1rem;color:var(--pri);letter-spacing:0.04em}
+        .proj{display:block;text-decoration:none;color:inherit}
+        .proj-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3.4rem}
     </style>
 </head>
 <body>
@@ -228,7 +232,7 @@
     <canvas id="confetti"></canvas>
     <div class="toggle" id="toggle"><div class="toggle-slider"></div><div class="toggle-text"><span class="t-dark">🖤 TECH</span><span class="t-light">PINK 💖</span></div></div>
     <div class="available-badge"><div class="available-dot"></div><span>Available for Hire</span></div>
-    <nav><div class="logo">KK.AI</div><div class="nav-links"><a href="#home">Home</a><a href="#skills">Skills</a><a href="#exp">Experience</a><a href="#projects">Projects</a><a href="#certs">Certs</a><a href="#contact">Contact</a></div><div id="greeting" style="color:var(--pri);font-size:0.8rem;"></div></nav>
+    <nav><div class="logo">KK.AI</div><div class="nav-links"><a href="#home">Home</a><a href="#skills">Skills</a><a href="#exp">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#certs">Certs</a><a href="#contact">Contact</a></div><div id="greeting" style="color:var(--pri);font-size:0.8rem;"></div></nav>
     
     <section class="hero" id="home">
         <div class="hero-box">
@@ -236,26 +240,28 @@
             <div class="hero-text">
                 <h1>BUILDING THE<br><span class="grad">FUTURE WITH AI</span></h1>
                 <div class="typing">$ <span id="type"></span><span>|</span></div>
-                <p>Computer Science graduate with 2+ years in ML, CV, and Data Science. M.Sc. at Aalen University, Germany.</p>
-                <div class="stats"><div class="stat"><div class="stat-num" id="stat1">0+</div><div class="stat-lbl">Years Exp</div></div><div class="stat"><div class="stat-num" id="stat2">0+</div><div class="stat-lbl">Certifications</div></div><div class="stat"><div class="stat-num" id="stat3">0%</div><div class="stat-lbl">ML Accuracy</div></div></div>
+                <p>M.Sc. Machine Learning &amp; Data Analytics student in Aalen. I build computer vision and LLM systems end to end, then check carefully whether the results can be trusted. Previously 3.5 years in enterprise SaaS.</p>
+                <div class="stats"><div class="stat"><div class="stat-num" id="stat1">0+</div><div class="stat-lbl">Years in ML &amp; Software</div></div><div class="stat"><div class="stat-num" id="stat2">0+</div><div class="stat-lbl">Open-Source Projects</div></div><div class="stat"><div class="stat-num" id="stat3">0</div><div class="stat-lbl">Lens Recall Gained</div></div></div>
                 <div class="btns"><a href="#contact" class="btn btn-pri" id="cta">✨ Get In Touch</a><a href="mailto:khushbooshaurya@gmail.com" class="btn btn-out">📧 Email Me</a></div>
             </div>
         </div>
     </section>
     
-    <section id="globe-sec"><div class="sec-title"><h2>📍 WHERE I'M BASED</h2></div><div class="globe-wrap"><canvas id="globe" width="320" height="320"></canvas><div class="loc-info"><h3>Aalen, Germany 🇩🇪</h3><p>M.Sc. in ML & Data Analytics at Aalen University.</p><div class="loc-badge"><span>📍</span><span>73434 Aalen, Baden-Württemberg</span></div></div></div></section>
+    <section id="globe-sec"><div class="sec-title"><h2>📍 WHERE I’M BASED</h2></div><div class="globe-wrap"><canvas id="globe" width="320" height="320"></canvas><div class="loc-info"><h3>Aalen, Germany 🇩🇪</h3><p>M.Sc. Machine Learning &amp; Data Analytics at Hochschule Aalen, enrolled until March 2028. Student research assistant at the Centre for Optical Technologies.</p><p>German residence permit with work authorisation. Open to working student roles, internships and research positions.</p><div class="loc-badge"><span>📍</span><span>73434 Aalen, Baden-Württemberg</span></div></div></div></section>
     
     <section id="terminal"><div class="sec-title"><h2>💻 MY TERMINAL</h2></div><div class="term"><div class="term-head"><div class="term-btn r"></div><div class="term-btn y"></div><div class="term-btn g"></div></div><div class="term-body" id="termBody"></div></div></section>
     
-    <section id="skills"><div class="sec-title"><h2>🧠 TECH STACK</h2></div><div class="skills-wrap"><canvas id="radar" width="300" height="300"></canvas><div class="skills-list"><div class="skill"><span>🐍</span>Python</div><div class="skill"><span>🤖</span>Machine Learning</div><div class="skill"><span>👁️</span>Computer Vision</div><div class="skill"><span>📊</span>Data Science</div><div class="skill"><span>🗄️</span>SQL</div><div class="skill"><span>💻</span>C# / WPF</div></div></div></section>
+    <section id="skills"><div class="sec-title"><h2>🧠 TECH STACK</h2></div><div class="skills-wrap"><canvas id="radar" width="300" height="300"></canvas><div class="skills-list"><div class="skill"><span>🐍</span>Python</div><div class="skill"><span>🔥</span>PyTorch</div><div class="skill"><span>👁️</span>Computer Vision</div><div class="skill"><span>🧠</span>LLMs, RAG &amp; Agents</div><div class="skill"><span>🗄️</span>SQL</div><div class="skill"><span>🐳</span>Docker &amp; Kubernetes</div><div class="skill"><span>⚡</span>FastAPI &amp; Next.js</div><div class="skill"><span>📊</span>scikit-learn &amp; pandas</div><div class="skill"><span>🔧</span>ONNX &amp; CUDA</div><div class="skill"><span>💻</span>C++ / C#.NET</div></div></div></section>
     
-    <section id="exp"><div class="sec-title"><h2>💼 EXPERIENCE</h2></div><div class="timeline"><div class="tl-item"><div class="tl-content"><div class="tl-date">NOV 2025 - PRESENT</div><h3 class="tl-title">Algorithm & ML Intern</h3><p class="tl-company">Carl Zeiss SMT GmbH</p><p class="tl-desc">ML & CV algorithms for industrial inspection.</p></div></div><div class="tl-item"><div class="tl-content"><div class="tl-date">MAY - OCT 2025</div><h3 class="tl-title">Werkstudent - Software Dev</h3><p class="tl-company">Matworks GmbH</p><p class="tl-desc">ML pipelines, WPF/XAML, Data Drift.</p></div></div><div class="tl-item"><div class="tl-content"><div class="tl-date">JUL 2022 - JUL 2024</div><h3 class="tl-title">Techno Functional Consultant</h3><p class="tl-company">HighRadius Technologies</p><p class="tl-desc">Cloud products for Fortune 2000 clients.</p></div></div></div></section>
+    <section id="exp"><div class="sec-title"><h2>💼 EXPERIENCE</h2></div><div class="timeline"><div class="tl-item"><div class="tl-content"><div class="tl-date">NOV 2026 &ndash; PRESENT</div><h3 class="tl-title">Student Research Assistant (HiWi)</h3><div class="tl-company">Hochschule Aalen &mdash; Centre for Optical Technologies (ZOT), Aalen</div><p class="tl-desc">Camera-based in-process monitoring of the polishing pad in robotic polishing, relating image features to white light interferometry measurements of material removal and surface texture.</p></div></div><div class="tl-item"><div class="tl-content"><div class="tl-date">JUN 2026 &ndash; AUG 2026</div><h3 class="tl-title">Student Research Assistant</h3><div class="tl-company">Max Planck Institute for Astronomy, Heidelberg</div><p class="tl-desc">Built a single-band F150W strong-lens finder for JWST NIRCam, a setup not explored before, as an end-to-end PyTorch pipeline from MAST archive queries and FITS/WCS cutouts to a ConvNeXt classifier. Tripled held-out lens recovery from 5.5% to 18% by auditing for data leakage and a brightness shortcut, then enforcing identical preprocessing and magnitude-matched training. With Dr. Ivelina Momcheva.</p></div></div><div class="tl-item"><div class="tl-content"><div class="tl-date">NOV 2025 &ndash; APR 2026</div><h3 class="tl-title">Algorithm &amp; Machine Learning Intern</h3><div class="tl-company">Carl Zeiss SMT GmbH, Oberkochen</div><p class="tl-desc">Built an end-to-end computer vision pipeline to test whether image grayscale predicts WLI surface roughness, using gradient and window-statistic features, blob and Hough circle detection and polar-to-pixel mapping. Turned a near-zero correlation (r=0.01) into |r|=0.60, and r=0.68 with a Random Forest, by diagnosing a 2.5&nbsp;mm coordinate offset and fixing it with grid-search alignment, then packaged it as a tested, YAML-configured tool the team adopted. Surfaced 16 real CVEs across 4 packages with pip-audit and a CycloneDX SBOM.</p></div></div><div class="tl-item"><div class="tl-content"><div class="tl-date">MAY 2025 &ndash; OCT 2025</div><h3 class="tl-title">Working Student, Software Development &amp; ML</h3><div class="tl-company">Matworks GmbH, Aalen</div><p class="tl-desc">Delivered defect segmentation for 9 classes and integrated a YOLOv9c detector via ONNX Runtime into a microscope-automation CLI, with letterbox resizing, coordinate remapping and JSON output. Sped up a C#/.NET data drift monitoring tool by profiling the bottleneck to texture-feature extraction and in-loop database calls, and fixed a bug that returned identical drift scores for every input.</p></div></div><div class="tl-item"><div class="tl-content"><div class="tl-date">MAY 2025 &ndash; SEP 2025</div><h3 class="tl-title">Student Research Assistant (HiWi)</h3><div class="tl-company">Hochschule Aalen &mdash; Prof. Dr. Orsolya Csiszár, Aalen</div><p class="tl-desc">Benchmarked three Kolmogorov-Arnold Network variants in PyTorch on a seven-target regression task, and improved all seven targets through feature engineering, validated with 5-fold cross-validation and Wilcoxon tests (p &lt; 0.0001).</p></div></div><div class="tl-item"><div class="tl-content"><div class="tl-date">JAN 2021 &ndash; JUL 2024</div><h3 class="tl-title">Techno Functional Consultant (Data &amp; Integration)</h3><div class="tl-company">HighRadius Technologies, Hyderabad / Bhubaneswar</div><p class="tl-desc">Promoted across four roles. Cut manual workload by around 30% with SQL validation pipelines and automated monitoring of data-loading agents, documented in 13 playbooks. Resolved multi-client production incidents across 15&ndash;25 Fortune 2000 accounts through root-cause analysis and JIRA escalation, and acted as the bridge between clients and product on requirements, configuration and user-acceptance testing.</p></div></div></div></section>
     
-    <section id="projects"><div class="sec-title"><h2>🚀 PROJECTS</h2></div><div class="projects"><div class="proj"><div class="proj-demo"><div class="scan"></div><div class="defect-grid" id="defectGrid"></div></div><div class="proj-info"><h3>🔍 Industrial Defect Detection</h3><p>CV pipeline for quality inspection.</p><div class="tags"><span>Python</span><span>OpenCV</span><span>ML</span></div></div></div><div class="proj"><div class="proj-demo"><div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div></div><div class="proj-info"><h3>📈 Data Drift Detection</h3><p>ML monitoring for distribution shifts.</p><div class="tags"><span>Statistics</span><span>MLOps</span></div></div></div><div class="proj"><div class="proj-demo" style="display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px"><div class="meter"><div class="meter-fill"></div></div><div style="display:flex;justify-content:space-between;width:75%"><span>😢</span><span>😐</span><span>😊</span></div></div><div class="proj-info"><h3>💬 Sentiment Analysis</h3><p>NLP for brand insights.</p><div class="tags"><span>NLP</span><span>Python</span></div></div></div></div></section>
+    <section id="projects"><div class="sec-title"><h2>🚀 PROJECTS</h2></div><p class="proj-note">Every card links to its repository. The 3D perception models are implemented from scratch, each with tests and GitHub Actions.</p><h3 class="proj-group">🧠 LLM, RAG &amp; Agents</h3><div class="projects"><a class="proj" href="https://github.com/khushbooshaurya5/Multimodal-RAG-Assistant" target="_blank" rel="noopener"><div class="proj-demo"><div class="proj-icon">🧩</div></div><div class="proj-info"><h3>Multimodal RAG Assistant</h3><p>Answers over documents, images and audio, designed so it will not guess: a similarity threshold makes it reply &ldquo;insufficient evidence&rdquo; instead of hallucinating, with near-duplicate removal, optional cross-encoder reranking and a citation on every answer. Retrieval is scored separately from answers against a committed baseline. 99 tests and CI.</p><div class="tags"><span>FAISS</span><span>Whisper</span><span>Qwen-VL</span><span>FastAPI</span><span>Docker</span></div></div></a><a class="proj" href="https://github.com/khushbooshaurya5/multi-agent-research-assistant" target="_blank" rel="noopener"><div class="proj-demo"><div class="proj-icon">🤝</div></div><div class="proj-info"><h3>Multi-Agent LLM System with RAG and Tool Calling</h3><p>Agents with different roles combine retrieval with tool calling under one orchestrator. Failure modes are studied directly: tool-call errors, and inconsistent outputs for the same input.</p><div class="tags"><span>Python</span><span>LangChain</span></div></div></a><a class="proj" href="https://github.com/khushbooshaurya5/rag-doc-assistant" target="_blank" rel="noopener"><div class="proj-demo"><div class="proj-icon">📄</div></div><div class="proj-info"><h3>RAG Document Assistant</h3><p>Full-stack document assistant that cites the exact page an answer came from, so a claim can be checked against the source rather than taken on trust.</p><div class="tags"><span>Next.js</span><span>Supabase pgvector</span><span>Gemini</span></div></div></a><a class="proj" href="https://github.com/khushbooshaurya5/llm-lora-sft" target="_blank" rel="noopener"><div class="proj-demo"><div class="proj-icon">🪄</div></div><div class="proj-info"><h3>LoRA Fine-Tune for Strict JSON</h3><p>Fine-tunes a small instruct model to emit strict JSON, with a before-and-after validity evaluation so the gain is measured rather than assumed.</p><div class="tags"><span>Hugging Face PEFT</span><span>LoRA</span></div></div></a></div><h3 class="proj-group">✍️ NLP &amp; Fine-Tuning</h3><div class="projects"><a class="proj" href="https://github.com/khushbooshaurya5/nmt-finetune-eval" target="_blank" rel="noopener"><div class="proj-demo"><div class="proj-icon">🌐</div></div><div class="proj-info"><h3>German to English NMT Fine-Tuning</h3><p>MarianMT and NLLB fine-tuned with LoRA through a config-driven CLI with CI, evaluated on a held-out set with sacreBLEU, chrF2 and COMET.</p><div class="tags"><span>MarianMT</span><span>NLLB</span><span>LoRA</span><span>CI</span></div></div></a><a class="proj" href="https://github.com/khushbooshaurya5/nlp-classic" target="_blank" rel="noopener"><div class="proj-demo"><div class="proj-icon">🔎</div></div><div class="proj-info"><h3>Classic Text Analytics</h3><p>spaCy against stanza on sentence segmentation, POS tagging, named-entity recognition and term extraction, plus a fake-news classifier over web-scraped news.</p><div class="tags"><span>spaCy</span><span>stanza</span></div></div></a></div><h3 class="proj-group">🚙 Computer Vision &amp; 3D Perception</h3><div class="projects"><a class="proj" href="https://github.com/khushbooshaurya5/lidar-semantic-segmentation" target="_blank" rel="noopener"><div class="proj-demo"><div class="proj-icon">🛰️</div></div><div class="proj-info"><h3>LiDAR Semantic Segmentation</h3><p>Per-point semantic labelling of LiDAR scans, implemented from scratch with tests and CI.</p><div class="tags"><span>PyTorch</span><span>CUDA</span></div></div></a><a class="proj" href="https://github.com/khushbooshaurya5/camera-lidar-fusion" target="_blank" rel="noopener"><div class="proj-demo"><div class="proj-icon">🔗</div></div><div class="proj-info"><h3>Camera-LiDAR Fusion</h3><p>Projects LiDAR points into the camera frame using the real calibration matrices rather than an idealised transform, then fuses the two streams.</p><div class="tags"><span>PyTorch</span><span>Calibration</span></div></div></a><a class="proj" href="https://github.com/khushbooshaurya5/monocular-depth-estimation" target="_blank" rel="noopener"><div class="proj-demo"><div class="proj-icon">🏔️</div></div><div class="proj-info"><h3>Self-Supervised Monocular Depth</h3><p>Depth from a single camera trained without depth labels, supervised by photometric consistency between frames.</p><div class="tags"><span>PyTorch</span><span>Self-supervised</span></div></div></a><a class="proj" href="https://github.com/khushbooshaurya5/pointpillars-3d-detection" target="_blank" rel="noopener"><div class="proj-demo"><div class="proj-icon">📦</div></div><div class="proj-info"><h3>PointPillars 3D Detection</h3><p>3D object detection over point clouds via the PointPillars encoding, implemented from scratch.</p><div class="tags"><span>PyTorch</span><span>3D Detection</span></div></div></a><a class="proj" href="https://github.com/khushbooshaurya5/bev-map-segmentation" target="_blank" rel="noopener"><div class="proj-demo"><div class="proj-icon">🗺️</div></div><div class="proj-info"><h3>BEV Map Segmentation</h3><p>Bird&rsquo;s-eye-view map segmentation, turning perspective input into a top-down semantic map.</p><div class="tags"><span>PyTorch</span><span>BEV</span></div></div></a></div></section>
     
     <section id="profiles-sec"><div class="sec-title"><h2>🚀 CODE PROFILES</h2></div><div class="profiles"><a href="https://github.com/khushbooshaurya5" target="_blank" class="profile"><div class="profile-icon"><svg viewBox="0 0 24 24" width="50" height="50" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></div><h3>GitHub</h3><p>@khushbooshaurya5</p><span class="profile-link">View Projects →</span><div class="commits"><div class="commit"></div><div class="commit"></div><div class="commit"></div><div class="commit"></div><div class="commit"></div></div></a><a href="https://www.kaggle.com/khushbooshaurya" target="_blank" class="profile"><div class="profile-icon"><svg viewBox="0 0 24 24" width="50" height="50" fill="currentColor"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.071.358z"/></svg></div><h3>Kaggle</h3><p>@khushbooshaurya</p><span class="profile-link">View Notebooks →</span><div class="medals"><span class="medal">🥇</span><span class="medal">🥈</span><span class="medal">🥉</span><span class="medal">📊</span></div></a></div></section>
     
-    <section id="certs"><div class="sec-title"><h2>🏆 CERTIFICATIONS</h2></div><div class="certs"><a href="#" class="cert"><div class="cert-badge">🆕 NEW</div><div class="cert-icon">🤖</div><h3>Human-AI Interactions</h3><span class="cert-org">Univ. of Ljubljana</span><span class="cert-date">Sep 2025</span></a><a href="#" class="cert"><div class="cert-icon">🌐</div><h3>CCNA Networking</h3><span class="cert-org">Cisco</span><span class="cert-date">2023</span></a><a href="#" class="cert"><div class="cert-icon">🐍</div><h3>Python for Data Science</h3><span class="cert-org">Coursera/IBM</span><span class="cert-date">2022</span></a><a href="#" class="cert"><div class="cert-icon">🤖</div><h3>Machine Learning</h3><span class="cert-org">Stanford</span><span class="cert-date">2022</span></a><a href="#" class="cert"><div class="cert-icon">📊</div><h3>Data Analytics</h3><span class="cert-org">Google</span><span class="cert-date">2023</span></a><a href="#" class="cert"><div class="cert-icon">☁️</div><h3>Cloud Computing</h3><span class="cert-org">AWS/Microsoft</span><span class="cert-date">2023</span></a></div></section>
+    <section id="education"><div class="sec-title"><h2>🎓 EDUCATION</h2></div><div class="timeline"><div class="tl-item"><div class="tl-content"><div class="tl-date">MAR 2025 &ndash; MAR 2028 (EXPECTED)</div><h3 class="tl-title">M.Sc. Machine Learning and Data Analytics</h3><div class="tl-company">Hochschule Aalen, Germany</div><p class="tl-desc">Current grade 2.2.</p></div></div><div class="tl-item"><div class="tl-content"><div class="tl-date">AUG 2018 &ndash; AUG 2022</div><h3 class="tl-title">B.Tech. Computer Science and Engineering</h3><div class="tl-company">KIIT University, Bhubaneswar, India</div><p class="tl-desc">Grade 1.8 on the German scale.</p></div></div></div></section>
+    
+    <section id="certs"><div class="sec-title"><h2>🏆 HONOURS &amp; CERTIFICATIONS</h2></div><div class="certs"><div class="cert"><div class="cert-icon">🏅</div><h3>High-Five Award</h3><span class="cert-org">HighRadius Technologies</span><span class="cert-date">2023</span></div><div class="cert"><div class="cert-icon">⚡</div><h3>AI for Energy Summer School</h3><span class="cert-org">Selected among top 50 applicants</span><span class="cert-date">Summer School</span></div><div class="cert"><div class="cert-icon">🌐</div><h3>CCNA v7</h3><span class="cert-org">Cisco</span><span class="cert-date">Certification</span></div><div class="cert"><div class="cert-icon">🐍</div><h3>PCAP – Certified Associate in Python Programming</h3><span class="cert-org">Python Institute</span><span class="cert-date">Certification</span></div></div></section>
     
     <section id="contact"><div class="sec-title"><h2>📬 CONTACT ME</h2></div><div class="contact-grid"><div class="contact-card" data-type="email"><div class="contact-icon">📧</div><h3>Email</h3><span>khushbooshaurya@gmail.com</span></div><div class="contact-card" data-type="phone"><div class="contact-icon">📱</div><h3>Phone</h3><span>+49 15510438420</span></div><div class="contact-card" data-type="linkedin"><div class="contact-icon">💼</div><h3>LinkedIn</h3><span>Connect →</span></div><div class="contact-card" data-type="location"><div class="contact-icon">📍</div><h3>Location</h3><span>Aalen, Germany 🇩🇪</span></div></div></section>
     
@@ -263,14 +269,14 @@
     
     <div class="hire-popup" id="hirePopup"><div class="hire-form"><span class="close-hire" id="closeHire">&times;</span><h2>🚀 Let's Connect!</h2><form id="hireForm"><div class="form-group"><label>Your Name *</label><input type="text" id="hireName" required></div><div class="form-group"><label>Your Email *</label><input type="email" id="hireEmail" required></div><div class="form-group"><label>Company</label><input type="text" id="hireCompany"></div><div class="form-group"><label>Message *</label><textarea id="hireMessage" required></textarea></div><button type="submit" class="submit-btn" id="submitHire">📧 Send Message</button></form><div class="status-msg" id="hireStatus"></div></div></div>
     
-    <div class="achievement-popup" id="ach1" style="top:150px"><span class="icon">🎓</span><span>M.Sc. in Germany</span></div>
-    <div class="achievement-popup" id="ach2" style="top:210px"><span class="icon">💼</span><span>Carl Zeiss Intern</span></div>
-    <div class="achievement-popup" id="ach3" style="top:270px"><span class="icon">🏆</span><span>15+ Certifications</span></div>
-    <div class="achievement-popup" id="ach4" style="top:330px"><span class="icon">🤖</span><span>98.7% ML Accuracy</span></div>
+    <div class="achievement-popup" id="ach1" style="top:150px"><span class="icon">🎓</span><span>M.Sc. at Hochschule Aalen</span></div>
+    <div class="achievement-popup" id="ach2" style="top:210px"><span class="icon">🔭</span><span>JWST lens finder at MPIA</span></div>
+    <div class="achievement-popup" id="ach3" style="top:270px"><span class="icon">🔬</span><span>CV pipeline at Zeiss SMT</span></div>
+    <div class="achievement-popup" id="ach4" style="top:330px"><span class="icon">🧠</span><span>LLM, RAG &amp; agents</span></div>
     
-    <div class="ticker"><div class="ticker-content"><span>💡 I debug code faster than I decide what to eat 🍕</span><span>🎯 15+ Certifications!</span><span>🌍 India 🇮🇳 → Germany 🇩🇪</span><span>☕ Powered by Coffee</span><span>🐍 Python lover 💕</span><span>💡 I debug code faster than I decide what to eat 🍕</span><span>🎯 15+ Certifications!</span><span>🌍 India 🇮🇳 → Germany 🇩🇪</span></div></div>
+    <div class="ticker"><div class="ticker-content"><span>💡 I debug code faster than I decide what to eat 🍕</span><span>🔭 Tripled JWST lens recall: 5.5% → 18%</span><span>🌍 India 🇮🇳 → Germany 🇩🇪</span><span>☕ Powered by Coffee</span><span>🐍 Python lover 💕</span><span>💡 I debug code faster than I decide what to eat 🍕</span><span>🔭 Tripled JWST lens recall: 5.5% → 18%</span><span>🌍 India 🇮🇳 → Germany 🇩🇪</span><span>☕ Powered by Coffee</span><span>🐍 Python lover 💕</span></div></div>
     
-    <footer><p>© 2025 Khushboo Kumari | Made with 💖</p></footer>
+    <footer><p>© 2026 Khushboo Kumari | Made with 💖</p></footer>
     
     <a href="javascript:void(0)" class="hire-me" id="hireMeBtn">🚀 HIRE ME</a>
     <div class="bot-toggle" id="botToggle">🤖</div>
@@ -296,9 +302,9 @@
         }
         setTimeout(upd, 500);
     }
-    countUp('stat1', 2, '+', 1000);
-    countUp('stat2', 15, '+', 1500);
-    countUp('stat3', 98.7, '%', 2000);
+    countUp('stat1', 5, '+', 1000);
+    countUp('stat2', 11, '+', 1500);
+    countUp('stat3', 3.3, '×', 2000);
     
     // ACHIEVEMENTS
     ['ach1','ach2','ach3','ach4'].forEach(function(id, i) {
@@ -436,7 +442,7 @@
     drawGlobe();
     
     // TERMINAL
-    var termLines = [{c:true,t:'$ whoami'},{c:false,t:'khushboo_kumari'},{c:true,t:'$ cat skills.txt'},{c:false,t:'🐍 Python | 🤖 ML | 👁️ CV | 📊 Data'},{c:true,t:'$ echo $LOCATION'},{c:false,t:'Aalen, Germany 🇩🇪'},{c:true,t:'$ ./run_success.sh'},{c:false,t:'✨ Building the future with AI...'},{c:true,t:'$ _'}];
+    var termLines = [{c:true,t:'$ whoami'},{c:false,t:'khushboo_kumari'},{c:true,t:'$ cat focus.txt'},{c:false,t:'👁️ Computer Vision | 🧠 LLM, RAG & Agents'},{c:true,t:'$ cat now.txt'},{c:false,t:'HiWi @ Centre for Optical Technologies, Aalen'},{c:true,t:'$ echo $LOCATION'},{c:false,t:'Aalen, Germany 🇩🇪'},{c:true,t:'$ ./highlight.sh'},{c:false,t:'🔭 JWST lens recall: 5.5% -> 18%'},{c:true,t:'$ _'}];
     var termIdx = 0, termStarted = false;
     function typeTerm() {
         if (termIdx >= termLines.length) return;
@@ -454,7 +460,7 @@
     // RADAR
     var radar = document.getElementById('radar');
     var rCtx = radar.getContext('2d');
-    var skills = [{n:'Python',v:95},{n:'ML',v:90},{n:'CV',v:85},{n:'Data',v:90},{n:'SQL',v:85},{n:'C#',v:75}];
+    var skills = [{n:'Python',v:95},{n:'PyTorch',v:90},{n:'CV',v:90},{n:'LLM/RAG',v:85},{n:'SQL',v:85},{n:'C#/.NET',v:70}];
     function drawRadar() {
         rCtx.clearRect(0, 0, 300, 300);
         var cx = 150, cy = 150, mr = 100;
@@ -482,7 +488,7 @@
     drawRadar();
     
     // TYPING
-    var titles = ['Machine Learning Engineer', 'Data Scientist', 'Computer Vision Specialist'];
+    var titles = ['Machine Learning Engineer', 'Computer Vision Engineer', 'LLM & RAG Developer'];
     var tIdx = 0, cIdx = 0, del = false;
     function typeTitle() {
         var cur = titles[tIdx];
@@ -494,16 +500,6 @@
         setTimeout(typeTitle, del ? 35 : 70);
     }
     typeTitle();
-    
-    // DEFECT GRID
-    var dg = document.getElementById('defectGrid');
-    for (var i = 0; i < 25; i++) { var c = document.createElement('div'); c.className = 'defect-cell'; dg.appendChild(c); }
-    setInterval(function() {
-        var cells = document.querySelectorAll('.defect-cell');
-        cells.forEach(function(c) { c.classList.remove('on'); });
-        cells[Math.floor(Math.random()*25)].classList.add('on');
-        cells[Math.floor(Math.random()*25)].classList.add('on');
-    }, 1500);
     
     // HOLO
     var holo = document.getElementById('holo');
@@ -531,13 +527,18 @@
     document.getElementById('qrClose').onclick = function(e) { e.stopPropagation(); document.getElementById('qrOverlay').classList.remove('show'); };
     
     // EMAILJS
-    emailjs.init('bsZAMN0nBLd3Gdk0d');
+    var mailReady = typeof emailjs !== 'undefined';
+    if (mailReady) emailjs.init('bsZAMN0nBLd3Gdk0d');
     document.getElementById('hireMeBtn').onclick = function() { document.getElementById('hirePopup').classList.add('show'); };
     document.getElementById('closeHire').onclick = function() { document.getElementById('hirePopup').classList.remove('show'); };
     document.getElementById('hirePopup').onclick = function(e) { if (e.target === this) this.classList.remove('show'); };
     document.getElementById('hireForm').onsubmit = function(e) {
         e.preventDefault();
         var btn = document.getElementById('submitHire');
+        if (!mailReady) {
+            document.getElementById('hireStatus').innerHTML = '<span style="color:#ff4444">Mail service unavailable \u2014 please write to khushbooshaurya@gmail.com</span>';
+            return;
+        }
         btn.disabled = true; btn.textContent = '⏳ Sending...';
         emailjs.send('service_agwqf7h', 'template_kfhuw45', {
             name: document.getElementById('hireName').value,
@@ -576,18 +577,18 @@
         help: ['help','what can','kya kar','option']
     };
     var botResponses = {
-        name: "I'm KK Bot! 🤖 I represent Khushboo Kumari - ML Engineer & Data Scientist!",
-        skills: "🐍 Python | 🤖 Machine Learning | 👁️ Computer Vision | 📊 Data Science | 🗄️ SQL | 💻 C#/WPF",
-        python: "Python is Khushboo's main weapon! 🐍 Expert level for ML, Data Analysis & CV!",
-        ml: "ML Expert! 🤖 98.7% accuracy models, Defect Detection, Data Drift Monitoring!",
-        experience: "💼 2+ Years:\n• Carl Zeiss SMT - ML Intern\n• Matworks GmbH - Software Dev\n• HighRadius - Consultant",
-        zeiss: "Currently at Carl Zeiss SMT GmbH 🔬 Building CV systems for industrial inspection!",
-        education: "🎓 M.Sc. ML & Data Analytics\n📍 Aalen University, Germany",
+        name: "I'm KK Bot! 🤖 I answer for Khushboo Kumari - Machine Learning & Computer Vision, plus LLM, RAG and agents.",
+        skills: "🐍 Python | 🔥 PyTorch | 👁️ Computer Vision | 🧠 LLM, RAG & agents | 🗄️ SQL | 🐳 Docker & Kubernetes",
+        python: "Python is the main tool 🐍 - PyTorch, scikit-learn, pandas, OpenCV and FastAPI.",
+        ml: "ML work 🤖 JWST strong-lens detection, surface-roughness prediction, 9-class defect segmentation and data drift monitoring.",
+        experience: "💼 Roles so far:\n• Hochschule Aalen ZOT - research assistant (now)\n• Max Planck Institute for Astronomy\n• Carl Zeiss SMT - algorithm & ML intern\n• Matworks GmbH - working student\n• HighRadius - consultant, 3.5 years",
+        zeiss: "The Zeiss SMT internship ran Nov 2025 to Apr 2026 🔬 a computer vision pipeline for surface roughness, packaged as a tool the team adopted. Khushboo is now a research assistant at the Centre for Optical Technologies in Aalen.",
+        education: "🎓 M.Sc. Machine Learning and Data Analytics, Hochschule Aalen, until Mar 2028\n🎓 B.Tech. Computer Science, KIIT University, grade 1.8",
         location: "📍 Aalen, Germany 🇩🇪\nOriginally from India 🇮🇳",
-        projects: "🚀 Top Projects:\n1. Defect Detection (98.7%)\n2. Data Drift Monitoring\n3. Sentiment Analysis",
+        projects: "🚀 A few:\n1. Multimodal RAG assistant that says 'insufficient evidence' instead of guessing\n2. Multi-agent LLM system with tool calling\n3. Five 3D perception models built from scratch\n\nAll on GitHub: khushbooshaurya5",
         contact: "📧 khushbooshaurya@gmail.com\n📱 +49 15510438420\n\nOr click HIRE ME! 🚀",
         hobby: "🎯 Coding\n📚 ML papers\n🎮 Gaming\n☕ Coffee!",
-        why: "Why Khushboo? 🌟\n✅ 2+ years ML experience\n✅ 98.7% accuracy\n✅ 15+ certifications\n✅ German work permit!",
+        why: "Why Khushboo? 🌟\n✅ Ships end to end, from data to a tested tool\n✅ Audits her own results - found a data leak that tripled real recall\n✅ 3.5 years of enterprise delivery before the Master's\n✅ German work authorisation",
         hello: "Hey there! 👋 Ask me about skills, experience, or projects!",
         bye: "Goodbye! 👋 Don't forget to click HIRE ME! 😉",
         thanks: "You're welcome! 😊",
